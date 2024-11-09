@@ -2,12 +2,17 @@
 
 const names = ["Anna", "Luca", "Marco", "Adele", "Laura", "Alessandra"];
 
+const letter = prompt("Inserisci una lettera");
 
-// Dichiara la funzione qui.
+function filterInitials(array, letter){
+    newArray = [];
+    for(let i = 0; i < array.length; i++){
+        if(array[i].charAt(0).toLowerCase() === letter.toLowerCase()){
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+}  
 
-
-// Invoca la funzione qui e stampa il risultato in console
-
-
-
-//Risultato atteso se si passa la lettera A: ["Anna", "Adele", "Alessandra"]
+const LetterNames = filterInitials(names, letter);
+console.log(LetterNames);
